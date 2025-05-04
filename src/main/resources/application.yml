@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: AIagent
+  ai:
+    dashscope:
+      api-key: "sk-318cf834334b448990dbba5b252f6546"
+      chat:
+        options:
+          model: qwen-plus
+    openai:
+      base-url: "https://api.deepseek.com"
+      api-key: "sk-6f1e6d16211a4a469bfb6822100e756e" #openai api key: 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
+      chat:
+        options:
+          model: "deepseek-chat"
+          temperature: 0.7
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+# springdoc-openapi
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.mak.aiagent.controller
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
