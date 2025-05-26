@@ -20,8 +20,8 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/springai-agent-demo.git
-cd springai-agent-demo
+git clone https://github.com/Sun-Kas/AIagent.git
+cd AIagent
 
 # 启动服务
 ./mvnw spring-boot:run
