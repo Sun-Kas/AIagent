@@ -1,6 +1,7 @@
 package com.mak.aiagent.App;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import io.modelcontextprotocol.client.McpSyncClient;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -9,6 +10,7 @@ import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor;
 import org.springframework.ai.rag.retrieval.search.DocumentRetriever;
 import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
+import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +25,9 @@ public class ChatApp {
     private VectorStore vectorStore;
 
     private final ChatClient chatClient;
+
+    @Resource
+    private ToolCallbackProvider toolCallbackProvider;
 
     public ChatApp(ChatClient chatClient) {
         this.chatClient = chatClient;
@@ -65,6 +70,18 @@ public class ChatApp {
                                 .vectorStore(vectorStore)
                                 .build())
                         .build())
+                .call()
+                .chatResponse();
+        String content = chatResponse.getResult().getOutput().getText();
+        return content;
+    }
+
+    public String doChatWithMCP(String message, String chatId) {
+        ChatResponse chatResponse = chatClient
+                .prompt()
+                .user(message)
+                .advisors(spec -> spec.param("chat_memory_conversation_id", chatId))
+                .toolCallbacks(toolCallbackProvider)
                 .call()
                 .chatResponse();
         String content = chatResponse.getResult().getOutput().getText();

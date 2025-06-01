@@ -16,6 +16,14 @@ spring:
           model: nomic-embed-text:latest
     deepseek:
       api-key: "sk-6f1e6d16211a4a469bfb6822100e756e"
+    mcp:
+      client:
+        sse:
+          connections:
+            server1:
+              url: http://localhost:8089/mcp/message
+        stdio:
+          servers-configuration: classpath:mcp-server.json
 #    openai:
 #      base-url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
 #      api-key: "sk-67faa846063a4c0c842b758133589923" #openai api key: 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
@@ -58,4 +66,5 @@ knife4j:
     language: zh_cn
 logging:
   level:
-    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+    #org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+    org.springframework.ai: DEBUG
