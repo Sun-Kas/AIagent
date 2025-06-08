@@ -164,6 +164,17 @@
 <!--            <version>5.4.0</version> &lt;!&ndash; 请根据需要选择最新版本 &ndash;&gt;-->
 <!--            <scope>test</scope>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>com.vaadin.external.google</groupId>
+            <artifactId>android-json</artifactId>
+            <version>0.0.20131108.vaadin1</version>
+            <scope>provided</scope> <!-- 或者干脆删掉这个依赖 -->
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.1.Final</version> <!-- 确保是 Jakarta 支持版本 -->
+        </dependency>
     </dependencies>
 
     <build>

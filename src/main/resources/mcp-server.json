@@ -19,7 +19,9 @@
         "-jar",
         "C:\\Users\\DELL\\Desktop\\SpringAI1.0\\MCPserver\\target\\MCPserver-0.0.1-SNAPSHOT.jar"
       ],
-      "env": {}
+      "env": {
+        "AMAP_MAPS_API_KEY": "你的 API Key"
+      }
     }
   }
 }
