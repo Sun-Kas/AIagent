@@ -23,7 +23,7 @@ import java.util.regex.*;
 @Slf4j
 public class WebSearchTool {
     // SearchAPI 的搜索接口地址
-    private static final String SEARCH_API_URL = "http://localhost:8083/search";
+    private static final String SEARCH_API_URL = "";//your path
 
 
     @Tool(description = "Search for information from Search Engine")
