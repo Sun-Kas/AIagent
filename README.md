@@ -25,3 +25,11 @@ cd AIagent
 
 # 启动服务
 ./mvnw spring-boot:run
+```
+
+# 内容展示
+![菜单](./images/菜单页.png)
+
+![对话](./images/聊天室.png)
+
+![Manux](./images/AI智能体.png)
