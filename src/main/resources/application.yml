@@ -3,40 +3,27 @@ spring:
     name: AIagent
   data:
     redis:
-      url: redis://192.168.100.131:6379
+      url:  # your path
   ai:
     ollama:
-      base-url: http://localhost:11434
+      base-url:  # your path
       chat:
         options:
           model: qwen3:8b
       embedding:
         enabled: true
         options:
-          model: nomic-embed-text:latest
+          model:  # your path
     deepseek:
-      api-key: "sk-6f1e6d16211a4a469bfb6822100e756e"
+      api-key:  # your key
     mcp:
       client:
         sse:
           connections:
             server1:
-              url: http://localhost:8089/mcp/message
+              url:  # your path
         stdio:
           servers-configuration: classpath:mcp-server.json
-#    openai:
-#      base-url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
-#      api-key: "sk-67faa846063a4c0c842b758133589923" #openai api key: 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
-#      chat:
-#        options:
-#          model: "qwen-plus"
-#          temperature: 0.7
-#      embedding:
-#        enabled: true
-#        base-url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
-#        api_key: "sk-318cf834334b448990dbba5b252f6546"
-#        options:
-#          model: text-embedding-v3
     vectorstore:
       redis:
         initialize-schema: true
