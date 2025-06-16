@@ -11,10 +11,10 @@ import java.util.Properties;
 public class EmailTool {
 
 
-        private final String smtpHost="smtp.qq.com";
-        private final String smtpPort="587";
-        private final String senderEmail="1344566881@qq.com";
-        private final  String senderPassword="flimfcgnpoddjchi";
+        private final String smtpHost="";//your email
+        private final String smtpPort="";//your email
+        private final String senderEmail="";//your email
+        private final  String senderPassword="";//your email
 
         @Tool(description = "send email to a someone",returnDirect = true)
         public String sendEmail(@ToolParam(description = "the Recipient email") String recipientEmail,
